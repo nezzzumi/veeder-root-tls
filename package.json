@@ -1,0 +1,13 @@
+{
+  "name": "tls4",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/iShi0n/tls4.git",
+  "author": "Guilherme S. <guibs225@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}
