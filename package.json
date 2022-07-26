@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "repository": "https://github.com/iShi0n/tls4.git",
-  "author": "Guilherme S. <guibs225@gmail.com>",
+  "author": "Guilherme Santos <guilherme0xff@proton.me>",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^8.20.0",
