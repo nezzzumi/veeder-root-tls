@@ -1,5 +1,6 @@
 /* eslint-disable new-cap */
 const net = require('net');
+const { PromiseSocket } = require('promise-socket');
 
 class Tls {
   /**
@@ -13,34 +14,33 @@ class Tls {
   }
 
   async connect() {
-    this.client = net.createConnection({
-      host: this.ip,
-      port: this.port,
-    });
+    this.promiseSocket = new PromiseSocket(net.Socket());
 
-    this.client.on('connect', () => {
+    try {
+      await this.promiseSocket.connect({
+        host: this.ip,
+        port: this.port,
+      });
       console.log(`Conectado a ${this.ip}:${this.port}.`);
-    });
-
-    this.client.on('timeout', () => {
-      throw Error(
-        `Conexão com ${this.ip}:${this.port} atingiu o limite de tempo sem resposta.`,
+    } catch (error) {
+      console.error(
+        'Ocorreu um erro ao se conectar ao TLS4.',
+        error.name,
       );
-    });
-
-    this.client.on('error', () => {
-      throw Error(
-        'Ocorreu um erro com a conexão.',
-      );
-    });
+      throw error;
+    }
   }
 
   async getTanks() {
     let buffer = new Buffer.from([0x1]);
     buffer += new Buffer.from('i20100');
 
-    this.client.write(buffer);
-    this.client.on('data', (data) => data);
+    await this.promiseSocket.write(buffer);
+    await this.promiseSocket.end();
+
+    const result = this.promiseSocket.readAll();
+
+    return result;
   }
 }
 

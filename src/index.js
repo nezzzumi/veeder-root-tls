@@ -1,6 +1,6 @@
 const Tls = require('./tls4');
 
-const tls = new Tls('34.131.193.205');
+const tls = new Tls('10.11.1.22');
 
 (async () => {
   await tls.connect();
