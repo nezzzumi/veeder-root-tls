@@ -11,7 +11,7 @@ class Tls {
    * @param {string} ip IP do TLS
    * @param {number} port Porta do TLS (padrão 10001)
    */
-  constructor(ip, port = 10001) {
+  constructor(ip: string, port: number = 10001) {
     this.ip = ip;
     this.port = port;
   }
@@ -25,7 +25,7 @@ class Tls {
         port: this.port,
       });
       console.log(`Conectado a ${this.ip}:${this.port}.`);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Ocorreu um erro ao se conectar ao TLS4.', error.name);
       throw error;
     }
