@@ -5,6 +5,9 @@
   "repository": "https://github.com/iShi0n/tls4.git",
   "author": "Guilherme Santos <guilherme0xff@proton.me>",
   "license": "MIT",
+  "scripts": {
+    "dev": "yarn ts-node ./src/index.ts"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.31.0",
     "@typescript-eslint/parser": "^5.31.0",
