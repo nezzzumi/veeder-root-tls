@@ -1,4 +1,4 @@
-const Tls = require('./tls4');
+import Tls from './TLS/tls4';
 
 const tls = new Tls('10.11.1.22');
 

@@ -3,6 +3,9 @@ const net = require('net');
 const { PromiseSocket } = require('promise-socket');
 
 class Tls {
+  ip: string;
+  port: number;
+  private promiseSocket: typeof PromiseSocket;
   /**
    *
    * @param {string} ip IP do TLS
@@ -23,17 +26,15 @@ class Tls {
       });
       console.log(`Conectado a ${this.ip}:${this.port}.`);
     } catch (error) {
-      console.error(
-        'Ocorreu um erro ao se conectar ao TLS4.',
-        error.name,
-      );
+      console.error('Ocorreu um erro ao se conectar ao TLS4.', error.name);
       throw error;
     }
   }
 
   async getTanks() {
-    let buffer = new Buffer.from([0x1]);
-    buffer += new Buffer.from('i20100');
+    let buffer = Buffer.from([0x1]);
+    buffer.write('i20100');
+    console.log(buffer);
 
     await this.promiseSocket.write(buffer);
     await this.promiseSocket.end();
@@ -44,4 +45,4 @@ class Tls {
   }
 }
 
-module.exports = Tls;
+export default Tls;
