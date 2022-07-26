@@ -1,14 +1,18 @@
 {
   "name": "tls4",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "repository": "https://github.com/iShi0n/tls4.git",
   "author": "Guilherme Santos <guilherme0xff@proton.me>",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.20.0",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "eslint": "^7.32.0 || ^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
+    "eslint-plugin-import": "^2.25.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
   },
   "dependencies": {
     "@types/node": "^18.0.6",
