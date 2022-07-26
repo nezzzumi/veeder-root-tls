@@ -32,9 +32,7 @@ class Tls {
   }
 
   async getTanks() {
-    let buffer = Buffer.from([0x1]);
-    buffer.write('i20100');
-    console.log(buffer);
+    const buffer = Buffer.concat([Buffer.from([0x1]), Buffer.from('i20100')]);
 
     await this.promiseSocket.write(buffer);
     await this.promiseSocket.end();
