@@ -1,13 +1,13 @@
 /* eslint-disable new-cap */
-const net = require('net');
-const { PromiseSocket } = require('promise-socket');
+import PromiseSocket from 'promise-socket';
+import net from 'net';
 
 class Tls {
   ip: string;
 
   port: number;
 
-  private promiseSocket?: typeof PromiseSocket;
+  private promiseSocket?: PromiseSocket<net.Socket>;
 
   /**
    *
@@ -20,7 +20,7 @@ class Tls {
   }
 
   async connect() {
-    this.promiseSocket = new PromiseSocket(net.Socket());
+    this.promiseSocket = new PromiseSocket(new net.Socket());
 
     try {
       await this.promiseSocket.connect({
