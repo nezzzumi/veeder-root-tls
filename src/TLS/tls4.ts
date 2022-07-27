@@ -4,8 +4,11 @@ const { PromiseSocket } = require('promise-socket');
 
 class Tls {
   ip: string;
+
   port: number;
+
   private promiseSocket: typeof PromiseSocket;
+
   /**
    *
    * @param {string} ip IP do TLS
