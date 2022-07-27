@@ -1,9 +1,9 @@
 {
-    "recommendations": [
-        "usernamehw.errorlens",
-        "wix.vscode-import-cost",
-        "esbenp.prettier-vscode",
-        "dbaeumer.vscode-eslint",
-        "xabikos.JavaScriptSnippets"
-    ]
+  "recommendations": [
+    "usernamehw.errorlens",
+    "wix.vscode-import-cost",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "xabikos.JavaScriptSnippets"
+  ]
 }
