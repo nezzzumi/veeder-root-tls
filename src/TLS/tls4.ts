@@ -7,7 +7,7 @@ class Tls {
 
   port: number;
 
-  private promiseSocket: typeof PromiseSocket;
+  private promiseSocket?: typeof PromiseSocket;
 
   /**
    *
