@@ -3,5 +3,8 @@
   "files.eol": "\n",
   "editor.tabSize": 2,
   "javascript.preferences.quoteStyle": "single",
-  "prettier.singleQuote": true
+  "prettier.singleQuote": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
