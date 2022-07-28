@@ -1,6 +1,13 @@
 import Tls from './TLS/tls4';
 
-const tls = new Tls('10.11.1.22');
+const tlsIp = process.env.TLS_IP;
+
+if (!tlsIp) {
+  console.error(`Variável de ambiente TLS_IP não definida.`);
+  process.exit(1);
+}
+
+const tls = new Tls(tlsIp);
 
 (async () => {
   await tls.connect();
