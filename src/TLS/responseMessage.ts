@@ -1,12 +1,31 @@
 abstract class ResponseMessage {
+  /**
+   * Comando que resultou a atual resposta.
+   * @readonly
+   */
   readonly command: string;
 
+  /**
+   * Atual data local.
+   * @readonly
+   */
   readonly datetime: Date;
 
+  /**
+   * Data do TLS.
+   * @readonly
+   */
   readonly datetimeTls: Date;
 
+  /**
+   * Index do buffer onde se inicia os dados, ignorando `comando`, `datetime`, etc.
+   * @readonly
+   */
   readonly paddingHeader: number;
 
+  /**
+   * Flag que informa o término dos dados.
+   */
   static terminationFlag: string = '&&';
 
   constructor(buffer: Buffer) {

@@ -1,13 +1,24 @@
 import PromiseSocket from 'promise-socket';
 import net from 'net';
-import ResponseMessage from './responseMessage';
 import ResponseMessageTank from './tank/response';
 
 class Tls {
+  /**
+   * IP do TLS.
+   * @readonly
+   */
   readonly ip: string;
 
+  /**
+   * Porta do TLS.
+   * @readonly
+   */
   readonly port: number;
 
+  /**
+   * Instância do PromiseSocket (conexão TCP com o TLS).
+   * @readonly
+   */
   private readonly promiseSocket: PromiseSocket<net.Socket>;
 
   /**
@@ -21,6 +32,10 @@ class Tls {
     this.promiseSocket = new PromiseSocket(new net.Socket());
   }
 
+  /**
+   * Lê toda informação da conexão aberta até o ETX (byte que sinaliza o fim da mensagem).
+   * @returns Buffer contendo as informações lidas.
+   */
   private async readAll(): Promise<Buffer> {
     const result = Buffer.from(
       await new Promise((resolve) => {
@@ -40,6 +55,9 @@ class Tls {
     return result;
   }
 
+  /**
+   * Cria conexão com o TLS.
+   */
   async connect() {
     try {
       await this.promiseSocket.connect({
@@ -58,9 +76,9 @@ class Tls {
   /**
    * Consulta informações do(s) tanque(s).
    * @param tank Número do tanque a ser buscado. (Todos tanques por padrão)
-   * @returns
+   * @returns ResponseMessageTank contendo as informações retornadas.
    */
-  async getTanks(tank: string = '00'): Promise<ResponseMessage> {
+  async getTanks(tank: string = '00'): Promise<ResponseMessageTank> {
     const padTank = tank.padStart(2, '0');
     const command = `i201${padTank}`;
     const buffer = Buffer.concat([Buffer.from([0x1]), Buffer.from(command)]);

@@ -2,8 +2,19 @@ import ResponseMessage from '../responseMessage';
 import Tank from './tank';
 
 class ResponseMessageTank extends ResponseMessage {
+  /**
+   * Lista de tanques retornados pelo TLS.
+   * @readonly
+   */
   readonly tanks: Tank[];
 
+  /**
+   * Quantidade de bytes retornados para cada tanque.
+   * @example
+   * const tankBytes = '01100000745637B044561D9F047617650438AF6090000000041E6BC6B00000000';
+   * console.log(tankBytes.length)
+   * > 65
+   */
   static tankBytesLength: number = 65;
 
   constructor(buffer: Buffer) {

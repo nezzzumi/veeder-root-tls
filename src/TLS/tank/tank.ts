@@ -1,26 +1,70 @@
 import TankStatus from './status';
 
 class Tank {
+  /**
+   * ID do tanque.
+   * @readonly
+   */
   readonly number: number;
 
+  /**
+   * ID do produto.
+   * @readonly
+   */
   readonly productCode: string;
 
+  /**
+   * Status do tanque.
+   * @readonly
+   */
   readonly status: TankStatus;
 
+  /**
+   * Quantidade de campos com dados (exemplo: volume, tc-volume, água, etc).
+   * @readonly
+   */
   readonly dataFieldsLength: number;
 
+  /**
+   * Volume de combustível no tanque.
+   * @readonly
+   */
   readonly volume: number;
 
+  /**
+   * Volume de combustível no tanque (considerando a temperatura).
+   * @readonly
+   */
   readonly tcVolume: number;
 
+  /**
+   * Volume vazio no tanque.
+   * @readonly
+   */
   readonly ullage: number;
 
+  /**
+   * Altura do tanque.
+   * @readonly
+   */
   readonly height: number;
 
+  /**
+   * Quantidade de água no tanque.
+   * @readonly
+   */
   readonly water: number;
 
+  /**
+   * Temperatura no tanque.
+   * @readonly
+   */
   readonly temperature: number;
 
+  /**
+   * Volume de água no tanque.
+   * @readonly
+   */
   readonly waterVolume: number;
 
   constructor(
@@ -49,6 +93,11 @@ class Tank {
     this.waterVolume = waterVolume;
   }
 
+  /**
+   * Cria instância de um tanque através dos bytes retornados pelo TLS.
+   * @param buffer Buffer contendo informações do tanque
+   * @returns Tanque com as informações tratadas.
+   */
   static fromBytes(buffer: Buffer): Tank {
     const tankNumber = parseInt(buffer.subarray(0, 2).toString(), 10);
     const productCode = buffer.subarray(2, 3).toString();
@@ -87,8 +136,6 @@ class Tank {
     );
 
     return tank;
-
-    // return tank;
   }
 }
 
