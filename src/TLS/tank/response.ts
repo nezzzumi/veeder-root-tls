@@ -1,6 +1,10 @@
 import ResponseMessage from '../responseMessage';
 import Tank from './tank';
 
+/**
+ * Representa o retorno da consulta dos tanques no TLS.
+ * @public
+ */
 class ResponseMessageTank extends ResponseMessage {
   /**
    * Lista de tanques retornados pelo TLS.

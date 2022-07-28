@@ -1,18 +1,18 @@
 abstract class ResponseMessage {
   /**
-   * Comando que resultou a atual resposta.
+   * Comando que resultou o atual retorno.
    * @readonly
    */
   readonly command: string;
 
   /**
-   * Atual data local.
+   * Data local no momento do retorno.
    * @readonly
    */
   readonly datetime: Date;
 
   /**
-   * Data do TLS.
+   * Data do TLS no momento do retorno.
    * @readonly
    */
   readonly datetimeTls: Date;
