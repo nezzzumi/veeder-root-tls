@@ -121,7 +121,7 @@ class Tank {
     const temperature = parts[5].readFloatBE();
     const waterVolume = parts[6].readFloatBE();
 
-    const tank = new Tank(
+    return new Tank(
       tankNumber,
       productCode,
       new TankStatus(status[0] === '1', status[1] === '1', status[2] === '1'),
@@ -134,8 +134,6 @@ class Tank {
       temperature,
       waterVolume
     );
-
-    return tank;
   }
 }
 
