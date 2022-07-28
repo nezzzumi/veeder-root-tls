@@ -74,6 +74,13 @@ class Tls {
   }
 
   /**
+   * Destrói conexão com o TLS.
+   */
+  destroy() {
+    this.promiseSocket.destroy();
+  }
+
+  /**
    * Consulta informações do(s) tanque(s).
    * @param tank Número do tanque a ser buscado. (Todos tanques por padrão)
    * @returns ResponseMessageTank contendo as informações retornadas.
