@@ -4,5 +4,9 @@ const tls = new Tls('10.11.1.22');
 
 (async () => {
   await tls.connect();
-  console.log(await tls.getTanks());
+
+  const responseTanks = await tls.getTanks();
+  console.log(responseTanks);
+
+  tls.destroy();
 })();
