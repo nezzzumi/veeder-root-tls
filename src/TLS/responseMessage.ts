@@ -21,7 +21,7 @@ abstract class ResponseMessage {
    * Index do buffer onde se inicia os dados, ignorando `comando`, `datetime`, etc.
    * @readonly
    */
-  readonly paddingHeader: number;
+  protected readonly paddingHeader: number;
 
   /**
    * Flag que informa o término dos dados.
