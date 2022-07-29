@@ -1,4 +1,4 @@
-import Tls from './TLS/tls4';
+import Tls from './tls/tls4';
 
 const tlsIp = process.env.TLS_IP;
 
