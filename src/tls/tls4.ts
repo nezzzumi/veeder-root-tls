@@ -66,9 +66,9 @@ class Tls {
       });
       this.promiseSocket.setTimeout(3000);
 
-      console.info(`Conectado a ${this.ip}:${this.port}.`);
+      console.info(`Conectado a ${this.ip}:${this.port}.\n`);
     } catch (error: any) {
-      console.error('Ocorreu um erro ao se conectar ao TLS4.', error.name);
+      console.error('Ocorreu um erro ao se conectar ao TLS4.');
       throw error;
     }
   }
