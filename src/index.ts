@@ -12,7 +12,12 @@ if (!tlsIp) {
 const tls = new Tls(tlsIp, tlsPort);
 
 (async () => {
-  await tls.connect();
+  try {
+    await tls.connect();
+  } catch (error) {
+    tls.destroy();
+    process.exit();
+  }
 
   const responseTanks = await tls.getTanks();
 
