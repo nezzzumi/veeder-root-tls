@@ -1,3 +1,4 @@
+import Tank from './tls/tank/tank';
 import Tls from './tls/tls4';
 
 const tlsIp = process.argv[2];
@@ -14,7 +15,10 @@ const tls = new Tls(tlsIp, tlsPort);
   await tls.connect();
 
   const responseTanks = await tls.getTanks();
-  console.log(responseTanks);
+
+  responseTanks.tanks.forEach((tank: Tank) => {
+    console.log(`T${tank.number} -> ${tank.volume}`);
+  });
 
   tls.destroy();
 })();
