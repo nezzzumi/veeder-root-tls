@@ -5,7 +5,7 @@ const tlsIp = process.argv[2];
 const tlsPort = parseInt(process.argv[3], 10) || 10001;
 
 if (!tlsIp) {
-  console.error(`Variável de ambiente TLS_IP não definida.`);
+  console.error(`IP não informado.`);
   process.exit(1);
 }
 
