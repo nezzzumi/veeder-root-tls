@@ -16,7 +16,7 @@ const tls = new Tls(tlsIp, tlsPort);
     await tls.connect();
   } catch (error) {
     tls.destroy();
-    process.exit();
+    return;
   }
 
   const responseTanks = await tls.getTanks();
