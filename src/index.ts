@@ -22,7 +22,7 @@ const tls = new Tls(tlsIp, tlsPort);
   const responseTanks = await tls.getTanks();
 
   responseTanks.tanks.forEach((tank: Tank) => {
-    console.log(`T${tank.number} -> ${tank.volume}`);
+    console.log(`T${tank.id} -> ${tank.volume}`);
   });
 
   tls.destroy();

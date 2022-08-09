@@ -5,7 +5,7 @@ class Tank {
    * ID do tanque.
    * @readonly
    */
-  readonly number: number;
+  readonly id: number;
 
   /**
    * ID do produto.
@@ -68,7 +68,7 @@ class Tank {
   readonly waterVolume: number;
 
   constructor(
-    number: number,
+    id: number,
     productCode: string,
     status: TankStatus,
     dataFieldsLength: number,
@@ -80,7 +80,7 @@ class Tank {
     temperature: number,
     waterVolume: number
   ) {
-    this.number = number;
+    this.id = id;
     this.productCode = productCode;
     this.status = status;
     this.dataFieldsLength = dataFieldsLength;
