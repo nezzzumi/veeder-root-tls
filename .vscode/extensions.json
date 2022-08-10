@@ -1,9 +1,8 @@
 {
   "recommendations": [
-    "usernamehw.errorlens",
-    "wix.vscode-import-cost",
-    "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
-    "xabikos.JavaScriptSnippets"
+    "esbenp.prettier-vscode",
+    "eamodio.gitlens",
+    "streetsidesoftware.code-spell-checker",
   ]
 }

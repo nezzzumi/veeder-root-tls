@@ -1,1 +1,1 @@
-export { Tls } from './TLS/tls4';
+export { Tls } from './lib/tls4';
