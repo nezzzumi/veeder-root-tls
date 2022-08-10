@@ -1,3 +1,1 @@
-import Tls from './TLS/tls4';
-
-export default Tls;
+export { Tls } from './TLS/tls4';

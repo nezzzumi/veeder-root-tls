@@ -2,7 +2,7 @@ import PromiseSocket from 'promise-socket';
 import net from 'net';
 import ResponseMessageTank from './tank/response';
 
-class Tls {
+export class Tls {
   /**
    * IP do TLS.
    * @readonly
@@ -102,5 +102,3 @@ class Tls {
     return response;
   }
 }
-
-export default Tls;
