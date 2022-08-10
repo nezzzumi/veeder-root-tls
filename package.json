@@ -1,6 +1,6 @@
 {
   "name": "veeder-root-tls",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/iShi0n/tls4.git",
