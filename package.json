@@ -7,7 +7,15 @@
   "module": "build/module/index.js",
   "repository": "https://github.com/iShi0n/veeder-root-tls",
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "automation",
+    "socket",
+    "veeder-root",
+    "iot",
+    "inventory",
+    "fuel",
+    "management"
+  ],
   "scripts": {
     "build": "run-p build:*",
     "build:main": "tsc -p tsconfig.json",
