@@ -5,6 +5,18 @@
 
 Biblioteca para comunicação com medidores eletrônicos Veeder Root.
 
-# TODO
+## Instalação
+
+Com o NPM:
+
+```bash
+$ npm i veeder-root-tls
+```
+
+Com o yarn:
+
+```bash
+$ yarn add veeder-root-tls
+```
 
 - [ ] Exemplos de uso
