@@ -5,6 +5,8 @@
 
 Biblioteca para comunicação com medidores eletrônicos Veeder Root.
 
+> Você pode encontrar a documentação oficial do Veeder Root utilizada para o desenvolvimento dessa biblioteca [aqui](https://accuflo.com/pdf/veeder/577013-950.pdf).
+
 ## Instalação
 
 Com o NPM:
