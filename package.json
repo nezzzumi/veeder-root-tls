@@ -1,6 +1,6 @@
 {
   "name": "veeder-root-tls",
-  "version": "3.1.4",
+  "version": "3.2.0",
   "description": "Biblioteca para comunicação com medidores eletrônicos Veeder Root.",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
@@ -48,9 +48,7 @@
   "engines": {
     "node": ">=10"
   },
-  "dependencies": {
-    "promise-socket": "^7.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@ava/typescript": "^1.1.1",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
