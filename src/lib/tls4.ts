@@ -88,6 +88,11 @@ export class Tls {
     return response;
   }
 
+  /**
+   * Consulta alarmes do(s) tanque(s).
+   * @param tank Número do tanque a ser buscado. (Todos tanques por padrão)
+   * @returns ResponseMessageAlarm contendo as informações retornadas.
+   */
   async getAlarms(tank = '00'): Promise<ResponseMessageAlarm> {
     const padTank = tank.padStart(2, '0');
     const command = `i101${padTank}`;
