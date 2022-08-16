@@ -1,5 +1,6 @@
 import net from 'net';
 
+import { ResponseMessageAlarm } from './alarm/response';
 import { ResponseMessageTank } from './tank/response';
 
 export class Tls {
@@ -83,6 +84,23 @@ export class Tls {
     }
 
     const response = new ResponseMessageTank(result);
+
+    return response;
+  }
+
+  async getAlarms(tank = '00'): Promise<ResponseMessageAlarm> {
+    const padTank = tank.padStart(2, '0');
+    const command = `i101${padTank}`;
+    const buffer = Buffer.concat([Buffer.from([0x1]), Buffer.from(command)]);
+
+    await this.socket.write(buffer);
+    const result = await this.readAll();
+
+    if (result.length === 0) {
+      throw Error('Retorno vazio ao buscar alarmes dos tanques.');
+    }
+
+    const response = new ResponseMessageAlarm(result);
 
     return response;
   }
