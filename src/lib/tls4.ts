@@ -76,7 +76,7 @@ export class Tls {
     const command = `i201${padTank}`;
     const buffer = Buffer.concat([Buffer.from([0x1]), Buffer.from(command)]);
 
-    await this.socket.write(buffer);
+    this.socket.write(buffer);
     const result = await this.readAll();
 
     if (result.length === 0) {
@@ -98,7 +98,7 @@ export class Tls {
     const command = `i101${padTank}`;
     const buffer = Buffer.concat([Buffer.from([0x1]), Buffer.from(command)]);
 
-    await this.socket.write(buffer);
+    this.socket.write(buffer);
     const result = await this.readAll();
 
     if (result.length === 0) {
