@@ -11,21 +11,21 @@ Biblioteca para comunicação com medidores eletrônicos Veeder Root.
 ## Conteúdo
 
 - [Instalação](#instalação)
-- [Conectando ao ATG](#conectando)
-- [Relatório dos tanques (estoque, água, etc.)](#)
+- [Conectando ao ATG](#conectando-com-o-atg)
+- [Relatório dos tanques (estoque, água, etc.)](#relatório-dos-tanques)
 
 ## Instalação
 
 Com o NPM:
 
 ```bash
-$ npm i veeder-root-tls
+npm i veeder-root-tls
 ```
 
 Com o yarn:
 
 ```bash
-$ yarn add veeder-root-tls
+yarn add veeder-root-tls
 ```
 
 ## Conectando com o ATG
@@ -42,7 +42,7 @@ const tls = new Tls('<IP>');
 const responseTanks = await tls.getTanks();
 
 responseTanks.tanks.forEach((tank) => {
-  console.log('Tanque ' + tank.id);
+  console.log('Tanque: ' + tank.id);
   console.log('Volume: ' + tank.volume);
   console.log('Altura: ' + tank.height);
   console.log('Produto: ' + tank.productCode);
